@@ -1730,6 +1730,7 @@ class EntityMap
      * associative array.
      *
      * @param array $array
+     *
      * @return array
      */
     public function getAttributeNamesFromColumns($array)
@@ -1740,6 +1741,7 @@ class EntityMap
                 $attributeName = isset($this->mappings[$key]) ? $this->mappings[$key] : $key;
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
         if ($this->camelCaseHydratation) {
@@ -1747,15 +1749,18 @@ class EntityMap
                 $attributeName = camel_case($key);
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
+
         return $array;
     }
 
     /**
-     * Gets the entity attribute name of a given column in a table
+     * Gets the entity attribute name of a given column in a table.
      *
      * @param string $columnName
+     *
      * @return string
      */
     public function getAttributeNameForColumn($columnName)
@@ -1765,6 +1770,7 @@ class EntityMap
                 return $this->mappings[$columnName];
             }
         }
+
         return $columnName;
     }
 
@@ -1774,6 +1780,7 @@ class EntityMap
      * an EntityMap is an associative array.
      *
      * @param array $array
+     *
      * @return array
      */
     public function getColumnNamesFromAttributes($array)
@@ -1785,6 +1792,7 @@ class EntityMap
                 $attributeName = isset($flipped[$key]) ? $flipped[$key] : $key;
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
         if ($this->camelCaseHydratation) {
@@ -1792,8 +1800,10 @@ class EntityMap
                 $attributeName = snake_case($key);
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
+
         return $array;
     }
 
@@ -1802,6 +1812,7 @@ class EntityMap
         if (!empty($this->mappings)) {
             return in_array($attribute, array_values($this->mappings));
         }
+
         return in_array($attribute, $attributes);
     }
 }

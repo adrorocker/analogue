@@ -198,7 +198,6 @@ class ObjectWrapper implements InternallyMappable
         // set with the original object properties
         $missingProperties = array_diff_key($this->properties, $properties);
 
-
         foreach (array_keys($missingProperties) as $missingKey) {
             $properties[$missingKey] = $this->properties[$missingKey];
         }

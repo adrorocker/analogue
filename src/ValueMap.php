@@ -122,6 +122,7 @@ class ValueMap
      * associative array.
      *
      * @param array $array
+     *
      * @return array
      */
     public function getAttributeNamesFromColumns($array)
@@ -132,15 +133,18 @@ class ValueMap
                 $attributeName = isset($this->mappings[$key]) ? $this->mappings[$key] : $key;
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
+
         return $array;
     }
 
     /**
-     * Gets the entity attribute name of a given column in a table
+     * Gets the entity attribute name of a given column in a table.
      *
      * @param string $columnName
+     *
      * @return string
      */
     public function getAttributeNameForColumn($columnName)
@@ -150,13 +154,15 @@ class ValueMap
                 return $this->mappings[$columnName];
             }
         }
+
         return $columnName;
     }
 
     /**
-     * Gets the column name of a given entity attribute
+     * Gets the column name of a given entity attribute.
      *
      * @param string $attributeName
+     *
      * @return string
      */
     public function getColumnNameForAttribute($attributeName)
@@ -167,6 +173,7 @@ class ValueMap
                 return $flipped[$attributeName];
             }
         }
+
         return $attributeName;
     }
 
@@ -176,6 +183,7 @@ class ValueMap
      * an EntityMap is an associative array.
      *
      * @param array $array
+     *
      * @return array
      */
     public function getColumnNamesFromAttributes($array)
@@ -187,8 +195,10 @@ class ValueMap
                 $attributeName = isset($flipped[$key]) ? $flipped[$key] : $key;
                 $newArray[$attributeName] = $value;
             }
+
             return $newArray;
         }
+
         return $array;
     }
 
@@ -197,6 +207,7 @@ class ValueMap
         if (!empty($this->mappings)) {
             return in_array($attribute, array_values($this->mappings));
         }
+
         return in_array($attribute, $attributes);
     }
 }

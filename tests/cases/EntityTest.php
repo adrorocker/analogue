@@ -2,8 +2,8 @@
 
 use TestApp\Article;
 use TestApp\Blog;
-use TestApp\User;
 use TestApp\Movie;
+use TestApp\User;
 
 class EntityTest extends AnalogueTestCase
 {

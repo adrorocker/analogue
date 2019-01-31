@@ -10,9 +10,9 @@ class LengthAwareEntityPaginator extends LengthAwarePaginator
      * Paginator constructor.
      *
      * @param mixed $items
-     * @param int $total
-     * @param int $perPage
-     * @param null $currentPage
+     * @param int   $total
+     * @param int   $perPage
+     * @param null  $currentPage
      * @param array $options
      */
     public function __construct($items, $total, $perPage, $currentPage = null, array $options = [])

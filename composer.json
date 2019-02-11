@@ -72,6 +72,9 @@
             "aliases": {
                 "Analogue": "Analogue\\ORM\\AnalogueFacade"
             }
+        },
+        "branch-alias": {
+            "dev-master": "5.6.x-dev"
         }
     }
 }
